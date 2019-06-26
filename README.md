@@ -36,7 +36,7 @@ Checkout stap 4<br/>
 •	Middels checkout stap 4, wordt de vierde stap in het boekingsproces gemeten<br/>
 •	Wanneer iemand zijn adresgegevens heeft ingevuld, onderstaande code inladen<br/>
 •	Alle variabelen, met uitzondering van ‘position’, moeten als string worden meegegeven. ‘Position’ moet als integer worden meegegeven.<br/>
- 
+<br/>
 Purchase<br/>
 •	Middels purchase wordt de uiteindelijke boeking gemeten<br/>
 •	Wanneer iemand op de bedanktpagina komt, de onderstaande code inladen<br/>
