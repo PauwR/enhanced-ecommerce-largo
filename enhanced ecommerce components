@@ -1,0 +1,237 @@
+//<script>
+// Measures product impressions and also tracks a standard
+// pageview for the tag configuration.
+// Product impressions are sent by pushing an impressions object
+// containing one or more impressionFieldObjects.
+dataLayer.push({
+  'ecommerce': {
+    'currencyCode': 'EUR',                       		// Local currency is optional.
+    'impressions': [
+     {
+       'name': 'Naam van accommodatie',       			// Name or ID is required.
+       'id': 'ID van accommodatie',
+       'price': 'Prijs per dag van accommodatie',
+       'category': 'Villa | Beach Houses | Appartement | Lodge',
+       'position': 1
+     },
+     {
+       'name': 'Naam van accommodatie',
+       'id': 'ID van accommodatie',
+       'price': 'Prijs per dag van accommodatie',
+       'category': 'Villa | Beach Houses | Appartement | Lodge',
+       'position': 2
+     }]
+  }
+});
+//</script>
+
+
+//<script>
+/**
+ * Call this function when a user clicks on a product link. This function uses the event
+ * callback datalayer variable to handle navigation after the ecommerce data has been sent
+ * to Google Analytics.
+ * @param {Object} productObj An object representing a product.
+ */
+function(productObj) {
+  dataLayer.push({
+    'event': 'productClick',
+    'ecommerce': {
+      'click': {      
+        'products': [{
+          'name': productObj.name,                      // Name or ID is required.
+          'id': productObj.id,
+          'price': productObj.price,
+          'category': productObj.cat,
+          'position': productObj.position
+         }]
+       }
+     },
+     'eventCallback': function() {
+       document.location = productObj.url
+     }
+  });
+}
+//</script>
+
+//<script>
+// Measure a view of product details. This example assumes the detail view occurs on pageload,
+// and also tracks a standard pageview of the details page.
+dataLayer.push({
+  'ecommerce': {
+    'detail': {   
+      'products': [{
+        'name': 'Naam van accommodatie',         // Name or ID is required.
+        'id': 'Id van accommodatie',
+        'price': 'Prijs per dag van accommodatie',
+        'category': 'Villa | Beach Houses | Appartement | Lodge',
+       }]
+     }
+   }
+});
+//</script>
+
+Wanneer verblijfsdatum is gekozen
+//<script>
+/**
+ * A function to handle a click on a checkout button. This function uses the eventCallback
+ * data layer variable to handle navigation after the ecommerce data has been sent to Google Analytics.
+ */
+function onCheckout() {
+  dataLayer.push({
+    'event': 'checkout',
+    'ecommerce': {
+      'checkout': {
+        'actionField': {'step': 1},
+        'products': [{
+          'name': 'Naam van accommodatie',
+          'id': 'Id van accommodatie',
+          'price': 'Prijs van accommodatie * aantal nachten',
+          'category': 'Villa | Beach Houses | Appartement | Lodge',
+          'quantity': 1
+       }]
+     }
+   },
+   'eventCallback': function() {
+      document.location = 'checkout.html';
+   }
+  });
+}
+//</script>
+
+Wanneer het gezelschap is ingevoerd
+//<script>
+/**
+ * A function to handle a click on a checkout button. This function uses the eventCallback
+ * data layer variable to handle navigation after the ecommerce data has been sent to Google Analytics.
+ */
+function onCheckout() {
+  dataLayer.push({
+    'event': 'checkout',
+    'ecommerce': {
+      'checkout': {
+        'actionField': {'step': 2},
+        'products': [{
+          'name': 'Naam van accommodatie',
+          'id': 'Id van accommodatie',
+          'price': 'Prijs van accommodatie * aantal nachten',
+          'category': 'Villa | Beach Houses | Appartement | Lodge',
+          'quantity': 1
+       }]
+     }
+   },
+   'eventCallback': function() {
+      document.location = 'checkout.html';
+   }
+  });
+}
+//</script>
+
+Waneer persoonlijke gegevens zijn ingevuld
+//<script>
+/**
+ * A function to handle a click on a checkout button. This function uses the eventCallback
+ * data layer variable to handle navigation after the ecommerce data has been sent to Google Analytics.
+ */
+function onCheckout() {
+  dataLayer.push({
+    'event': 'checkout',
+    'ecommerce': {
+      'checkout': {
+        'actionField': {'step': 3},
+        'products': [{
+          'name': 'Naam van accommodatie',
+          'id': 'Id van accommodatie',
+          'price': 'Prijs van accommodatie * aantal nachten',
+          'category': 'Villa | Beach Houses | Appartement | Lodge',
+          'quantity': 1
+       }]
+     }
+   },
+   'eventCallback': function() {
+      document.location = 'checkout.html';
+   }
+  });
+}
+//</script>
+
+Wanneer adresgegevens zijn ingevuld
+//<script>
+/**
+ * A function to handle a click on a checkout button. This function uses the eventCallback
+ * data layer variable to handle navigation after the ecommerce data has been sent to Google Analytics.
+ */
+function onCheckout() {
+  dataLayer.push({
+    'event': 'checkout',
+    'ecommerce': {
+      'checkout': {
+        'actionField': {'step': 3},
+        'products': [{
+          'name': 'Naam van accommodatie',
+          'id': 'Id van accommodatie',
+          'price': 'Prijs van accommodatie * aantal nachten',
+          'category': 'Villa | Beach Houses | Appartement | Lodge',
+          'quantity': 1
+       }]
+     }
+   },
+   'eventCallback': function() {
+      document.location = 'checkout.html';
+   }
+  });
+}
+//</script>
+
+//<script>
+// Send transaction data with a pageview if available
+// when the page loads. Otherwise, use an event when the transaction
+// data becomes available.
+dataLayer.push({
+  'ecommerce': {
+    'purchase': {
+      'actionField': {
+        'id': 'Id van boeking',                                                                     // Transaction ID. Required for purchases and refunds.
+        'revenue': 'Totale opbrengst van boeking - zaken als toeristenbelasting en borg etc',       // Total transaction value (incl. tax and shipping)
+        'tax':'Totale belasting',
+      },
+      'products': [{                            // List of productFieldObjects.
+        'name': 'Triblend Android T-Shirt',     // Name or ID is required.
+        'id': '12345',
+        'price': 'Totale opbrengst van accommodatie - zaken als toeristenbelasting en borg etc',
+        'category': 'Villa | Beach Houses | Appartement | Lodge',
+        'quantity': 1,
+       }]
+    }
+  }
+});
+//</script>
+
+//<script>
+// Refund an entire transaction by providing the transaction ID. This example assumes the details
+// of the completed refund are available when the page loads:
+dataLayer.push({
+  'ecommerce': {
+    'refund': {
+      'actionField': {'id': 'ID van boeking'}         // Transaction ID. Required for purchases and refunds.
+    }
+  }
+});
+//</script>
+
+//<script>
+// Measure a partial refund by providing an array of productFieldObjects and specifying the ID and
+// quantity of each product being returned. This example assumes the partial refund details are
+// known at the time the page loads:
+dataLayer.push({
+  'ecommerce': {
+    'refund': {
+      'actionField': {'id': 'ID van boeking'},                                  // Transaction ID.
+      'products': [
+            {'id': 'Boeking van desbetreffend accommodatie', 'quantity': 1},   	// Product ID and quantity. Required for partial refunds.
+            {'id': 'Boeking van desbetreffend accommodatie','quantity': 1}		  // Per accommodatie die wordt geannuleerd, een regel toevoegen
+       ]
+     }
+  }
+});
+//</script>
