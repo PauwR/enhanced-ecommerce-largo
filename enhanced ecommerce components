@@ -1,4 +1,5 @@
-//<script>
+//Product impressions
+<script>
 // Measures product impressions and also tracks a standard
 // pageview for the tag configuration.
 // Product impressions are sent by pushing an impressions object
@@ -23,10 +24,10 @@ dataLayer.push({
      }]
   }
 });
-//</script>
+</script>
 
-
-//<script>
+//Product click
+<script>
 /**
  * Call this function when a user clicks on a product link. This function uses the event
  * callback datalayer variable to handle navigation after the ecommerce data has been sent
@@ -52,9 +53,10 @@ function(productObj) {
      }
   });
 }
-//</script>
+</script>
 
-//<script>
+//Product detail view
+<script>
 // Measure a view of product details. This example assumes the detail view occurs on pageload,
 // and also tracks a standard pageview of the details page.
 dataLayer.push({
@@ -69,9 +71,9 @@ dataLayer.push({
      }
    }
 });
-//</script>
+</script>
 
-Wanneer verblijfsdatum is gekozen
+//Checkout stap 1: Wanneer verblijfsdatum is gekozen
 //<script>
 /**
  * A function to handle a click on a checkout button. This function uses the eventCallback
@@ -97,10 +99,10 @@ function onCheckout() {
    }
   });
 }
-//</script>
+</script>
 
-Wanneer het gezelschap is ingevoerd
-//<script>
+//Checkout stap 2: Wanneer het gezelschap is ingevoerd
+<script>
 /**
  * A function to handle a click on a checkout button. This function uses the eventCallback
  * data layer variable to handle navigation after the ecommerce data has been sent to Google Analytics.
@@ -125,10 +127,10 @@ function onCheckout() {
    }
   });
 }
-//</script>
+</script>
 
-Waneer persoonlijke gegevens zijn ingevuld
-//<script>
+//Checkout stap 3: Wanneer persoonlijke gegevens zijn ingevuld
+<script>
 /**
  * A function to handle a click on a checkout button. This function uses the eventCallback
  * data layer variable to handle navigation after the ecommerce data has been sent to Google Analytics.
@@ -153,10 +155,10 @@ function onCheckout() {
    }
   });
 }
-//</script>
+</script>
 
-Wanneer adresgegevens zijn ingevuld
-//<script>
+//Checkout stap 4: Wanneer adresgegevens zijn ingevuld
+<script>
 /**
  * A function to handle a click on a checkout button. This function uses the eventCallback
  * data layer variable to handle navigation after the ecommerce data has been sent to Google Analytics.
@@ -181,9 +183,10 @@ function onCheckout() {
    }
   });
 }
-//</script>
+</script>
 
-//<script>
+//Purchase
+<script>
 // Send transaction data with a pageview if available
 // when the page loads. Otherwise, use an event when the transaction
 // data becomes available.
@@ -205,9 +208,10 @@ dataLayer.push({
     }
   }
 });
-//</script>
+</script>
 
-//<script>
+//Complete refund
+<script>
 // Refund an entire transaction by providing the transaction ID. This example assumes the details
 // of the completed refund are available when the page loads:
 dataLayer.push({
@@ -217,9 +221,10 @@ dataLayer.push({
     }
   }
 });
-//</script>
+</script>
 
-//<script>
+//Partial Refund
+<script>
 // Measure a partial refund by providing an array of productFieldObjects and specifying the ID and
 // quantity of each product being returned. This example assumes the partial refund details are
 // known at the time the page loads:
@@ -234,4 +239,4 @@ dataLayer.push({
      }
   }
 });
-//</script>
+</script>
